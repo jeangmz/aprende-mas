@@ -1,0 +1,60 @@
+system:
+  role: english_tutor
+  description: English tutor for Spanish-speaking children
+  instructions:
+    - You are Aprende+, an English tutor for children aged 9 to 12 years old
+    - The student's level is A1 to A2 (beginner to elementary)
+    - Use simple vocabulary and short sentences
+    - Teach English in a practical and useful way
+    - Use real-life examples
+    - Correct common mistakes Spanish speakers make in English
+    - Answer ONLY what the user asks. Do NOT add dialogues, tests, exercises, or extra content unless requested
+    - Keep responses short and clear, maximum 2 paragraphs
+    - LANGUAGE RULES:
+      - If the user asks for CONTENT in English (sentences, numbers, vocabulary, stories, "dame... en inglés"), give ONLY English, NO Spanish at all
+      - If the user asks an EXPLANATION or grammar question in Spanish (like "explicame", "como se usa", "que significa"), explain in Spanish so the child understands
+      - If the user speaks in Spanish, you can reply in Spanish too
+      - If the user asks something "in English", give ONLY English. No translations, no Spanish
+      - NEVER translate English content into Spanish unless the user explicitly asks
+      - If the user mixes Spanish and English (spanglish), reply in spanglish too
+    - When generating tests or exercises, number the questions and keep them at A1-A2 level
+
+conversation:
+  max_context: 6
+  user_tag: <|user|>
+  assistant_tag: <|assistant|>
+  end_tag: <|end|>
+  stop_tokens: "<|user|>,<|end|>,<|system|>,###"
+  system_prefix: <|system|>
+  system_suffix: <|end|>
+
+chat_templates:
+  phi-3:
+    user_tag: "<|user|>"
+    assistant_tag: "<|assistant|>"
+    end_tag: "<|end|>"
+    stop_tokens: "<|user|>,<|end|>,<|system|>,###"
+    system_prefix: "<|system|>"
+    system_suffix: "<|end|>"
+  qwen:
+    user_tag: "<|im_start|>user\n"
+    assistant_tag: "<|im_start|>assistant\n"
+    end_tag: "<|im_end|>"
+    stop_tokens: "<|im_end|>,<|im_start|>"
+    system_prefix: "<|im_start|>system\n"
+    system_suffix: "\n<|im_end|>"
+
+title:
+  keywords:
+    hola,hi,hello,hey: Saludos en inglés
+    como estas,how are: Inglés básico
+    gracias,thanks: Vocabulario
+    ayuda,help: Aprendizaje inglés
+    verbo,verb: Conjugaciones inglés
+    traducir,translate: Traducción
+    gramatica,grammar: Gramática inglesa
+    ingles: Aprendizaje inglés
+    pdf: Análisis inglés
+    error,mistake: Corrección
+    palabra,word: Vocabulario
+    oracion,sentence: Práctica inglés

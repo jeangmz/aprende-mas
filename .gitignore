@@ -1,0 +1,14 @@
+dist/
+build/
+venv/
+__pycache__/
+*.pyc
+*.db
+model/*.gguf
+*.spec
+!LexiMind.spec
+aprendizaje_progreso.json
+.vscode/
+.env
+*.log
+nul
