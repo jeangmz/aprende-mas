@@ -3,7 +3,7 @@
 :root {
   font-family: Inter, "Segoe UI", sans-serif;
   color: #0f172a;
-  background: #f8f4ff;
+  background: #f7fbff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,9 +19,9 @@ body,
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 28%),
-    radial-gradient(circle at top right, rgba(244, 114, 182, 0.1), transparent 24%),
-    linear-gradient(180deg, #fcfbff 0%, #f6f0ff 48%, #f8f4ff 100%);
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 24%),
+    linear-gradient(180deg, #fcfbff 0%, #f6f0ff 48%, #f7fbff 100%);
 }
 
 button,
@@ -35,5 +35,6 @@ textarea {
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.18);
+  background: rgba(37, 99, 235, 0.18);
 }
+

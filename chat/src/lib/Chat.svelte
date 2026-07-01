@@ -227,7 +227,7 @@
   }
 </script>
 
-<div class="flex h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(124,58,237,0.18),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(244,114,182,0.14),_transparent_28%),linear-gradient(180deg,_#fcfbff_0%,_#f5f0ff_42%,_#f8f4ff_100%)] text-slate-800">
+<div class="flex h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.18),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(59,130,246,0.12),_transparent_28%),linear-gradient(180deg,_#fbfdff_0%,_#f2f8ff_42%,_#eef6ff_100%)] text-slate-800">
   <div
     class={`fixed inset-0 z-40 bg-slate-950/30 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${sidebarOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
     role="button"
@@ -237,9 +237,9 @@
   ></div>
 
   <aside class={`fixed inset-y-0 left-0 z-50 flex w-[290px] flex-col border-r border-white/60 bg-white/78 shadow-[0_30px_80px_rgba(109,40,217,0.18)] backdrop-blur-2xl transition-all duration-300 lg:static lg:z-0 lg:translate-x-0 ${sidebarCollapsed ? 'lg:w-[96px]' : 'lg:w-[290px]'} ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-    <div class={`border-b border-violet-100/80 pb-5 pt-6 ${sidebarCollapsed ? 'px-3' : 'px-5'}`}>
+    <div class={`border-b border-blue-100/80 pb-5 pt-6 ${sidebarCollapsed ? 'px-3' : 'px-5'}`}>
       <div class={`mb-4 flex items-center ${sidebarCollapsed ? 'justify-center' : 'gap-3'}`}>
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 via-purple-500 to-fuchsia-400 text-white shadow-lg shadow-violet-200">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-blue-500 to-sky-400 text-white shadow-lg shadow-blue-200">
           <Brain class="h-6 w-6" stroke-width="1.8" />
         </div>
         {#if !sidebarCollapsed}
@@ -249,7 +249,7 @@
 
       <button
         onclick={startNewChat}
-        class={`flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-500 py-3 font-bold text-white shadow-lg shadow-violet-200 transition-all hover:-translate-y-0.5 hover:shadow-xl cursor-pointer ${sidebarCollapsed ? 'px-0' : 'gap-2 px-4'}`}
+        class={`flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 py-3 font-bold text-white shadow-lg shadow-blue-200 transition-all hover:-translate-y-0.5 hover:shadow-xl cursor-pointer ${sidebarCollapsed ? 'px-0' : 'gap-2 px-4'}`}
         aria-label="Nuevo chat"
       >
         <Sparkles class="h-4 w-4" />
@@ -261,24 +261,24 @@
 
     {#if !sidebarCollapsed}
       <div class="px-5 py-4">
-        <div class="rounded-3xl border border-violet-100 bg-gradient-to-br from-violet-50 to-white p-4 shadow-sm">
+        <div class="rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-4 shadow-sm">
           <div class="mb-3 flex items-center justify-between">
             <div class="text-sm font-semibold text-slate-700">Tu espacio</div>
-            <div class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-violet-700 shadow-sm">
+            <div class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-blue-700 shadow-sm">
               {sessions.length} chats
             </div>
           </div>
           <div class="grid grid-cols-2 gap-3 text-sm">
             <div class="rounded-2xl bg-white/90 p-3 shadow-sm">
               <div class="mb-1 flex items-center gap-2 text-slate-500">
-                <MessageSquare class="h-4 w-4 text-violet-500" />
+                <MessageSquare class="h-4 w-4 text-blue-500" />
                 Historial
               </div>
               <div class="text-lg font-black text-slate-900">{messages.length}</div>
             </div>
             <div class="rounded-2xl bg-white/90 p-3 shadow-sm">
               <div class="mb-1 flex items-center gap-2 text-slate-500">
-                <Clock3 class="h-4 w-4 text-fuchsia-500" />
+                <Clock3 class="h-4 w-4 text-blue-500" />
                 Sesión
               </div>
               <div class="truncate text-sm font-bold text-slate-900">{sessionTitle || 'Nueva conversación'}</div>
@@ -301,11 +301,11 @@
           <div class="group relative">
             <button
               onclick={() => { loadHistory(session.session_id); sidebarOpen = false; }}
-              class={`w-full rounded-2xl border text-left transition-all cursor-pointer ${sidebarCollapsed ? 'p-2.5' : 'p-3.5 pr-10'} ${sessionId === session.session_id ? 'border-violet-200 bg-gradient-to-r from-violet-100/90 to-fuchsia-50 shadow-md shadow-violet-100' : 'border-transparent bg-white/75 hover:border-violet-100 hover:bg-white hover:shadow-sm'}`}
+              class={`w-full rounded-2xl border text-left transition-all cursor-pointer ${sidebarCollapsed ? 'p-2.5' : 'p-3.5 pr-10'} ${sessionId === session.session_id ? 'border-blue-200 bg-gradient-to-r from-blue-100/90 to-sky-50 shadow-md shadow-blue-100' : 'border-transparent bg-white/75 hover:border-blue-100 hover:bg-white hover:shadow-sm'}`}
               aria-label={session.title || 'Chat'}
             >
               <div class={`flex min-w-0 items-center ${sidebarCollapsed ? 'justify-center' : 'gap-3'}`}>
-                <div class={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl text-sm font-black ${sessionId === session.session_id ? 'bg-violet-600 text-white' : 'bg-violet-100 text-violet-700'}`}>
+                <div class={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-2xl text-sm font-black ${sessionId === session.session_id ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-700'}`}>
                   {getInitial(session.title || 'C')}
                 </div>
                 {#if !sidebarCollapsed}
@@ -332,9 +332,9 @@
         {/each}
 
         {#if sessions.length === 0}
-          <div class={`rounded-3xl border border-dashed border-violet-200 bg-white/70 text-center text-sm text-slate-500 ${sidebarCollapsed ? 'p-3' : 'p-5'}`}>
+          <div class={`rounded-3xl border border-dashed border-blue-200 bg-white/70 text-center text-sm text-slate-500 ${sidebarCollapsed ? 'p-3' : 'p-5'}`}>
             {#if sidebarCollapsed}
-              <MessageSquare class="mx-auto h-5 w-5 text-violet-400" />
+              <MessageSquare class="mx-auto h-5 w-5 text-blue-400" />
             {:else}
               Tus conversaciones aparecerán aquí cuando empieces a practicar.
             {/if}
@@ -350,7 +350,7 @@
         <div class="flex min-w-0 items-center gap-3">
           <button
             onclick={handleSidebarButton}
-            class="rounded-2xl border border-violet-200 bg-white p-2.5 text-violet-700 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
+            class="rounded-2xl border border-blue-200 bg-white p-2.5 text-blue-700 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
             aria-label="Alternar sidebar"
           >
             <PanelLeft class={`h-5 w-5 transition-transform duration-300 ${sidebarCollapsed ? 'rotate-180' : ''}`} />
@@ -359,7 +359,7 @@
           <div class="min-w-0">
             {#if currentGame}
               <div class="mb-1 flex items-center gap-2">
-                <div class="rounded-full bg-fuchsia-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-fuchsia-700">
+                <div class="rounded-full bg-blue-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">
                   {GAMES[currentGame].title}
                 </div>
               </div>
@@ -377,14 +377,14 @@
               bind:value={tempName}
               onkeydown={handleNameKeydown}
               onblur={saveName}
-              class="w-32 rounded-2xl border border-violet-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none ring-0 transition focus:border-violet-400 focus:shadow-[0_0_0_4px_rgba(139,92,246,0.12)]"
+              class="w-32 rounded-2xl border border-blue-200 bg-white px-3 py-2 text-sm text-slate-700 outline-none ring-0 transition focus:border-blue-400 focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)]"
             />
           {:else}
             <button
               onclick={startEditName}
               class="flex items-center gap-3 rounded-2xl border border-white/80 bg-white px-3 py-2 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
             >
-              <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-fuchsia-100 text-violet-700">
+              <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 text-blue-700">
                 <Smile class="h-5 w-5" />
               </div>
               <div class="hidden text-left sm:block">
@@ -401,9 +401,9 @@
       <div class="mx-auto flex min-h-full w-full max-w-5xl flex-col">
         {#if messages.length === 0}
           <section class="flex flex-1 items-center justify-center py-6">
-            <div class="w-full max-w-4xl rounded-[32px] border border-white/80 bg-white/68 p-6 shadow-[0_30px_80px_rgba(109,40,217,0.10)] backdrop-blur-xl md:p-8">
+            <div class="w-full max-w-4xl rounded-[32px] border border-white/80 bg-white/68 p-6 shadow-[0_30px_80px_rgba(37,99,235,0.10)] backdrop-blur-xl md:p-8">
               <div class="mx-auto max-w-3xl text-center">
-                <div class="mx-auto mb-5 flex h-[72px] w-[72px] items-center justify-center rounded-[28px] bg-gradient-to-br from-violet-600 via-purple-500 to-fuchsia-500 text-white shadow-lg shadow-violet-200">
+                <div class="mx-auto mb-5 flex h-[72px] w-[72px] items-center justify-center rounded-[28px] bg-gradient-to-br from-blue-600 via-blue-500 to-sky-500 text-white shadow-lg shadow-blue-200">
                   <BrainCircuit class="h-10 w-10" stroke-width="1.7" />
                 </div>
                 <h1 class="text-4xl font-black leading-tight tracking-tight text-slate-900 md:text-5xl">
@@ -417,9 +417,9 @@
                   {#each Object.entries(GAMES) as [key, { title, icon: Icon }]}
                     <button
                       onclick={() => startGame(key)}
-                      class="group rounded-3xl border border-violet-100 bg-white p-4 text-left shadow-sm transition-all hover:-translate-y-1 hover:border-violet-300 hover:shadow-lg cursor-pointer"
+                      class="group rounded-3xl border border-blue-100 bg-white p-4 text-left shadow-sm transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg cursor-pointer"
                     >
-                      <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-100 to-fuchsia-100 text-violet-700 transition-transform group-hover:scale-105">
+                      <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-sky-100 text-blue-700 transition-transform group-hover:scale-105">
                         <Icon class="h-6 w-6" />
                       </div>
                       <div class="text-base font-black text-slate-900">{title}</div>
@@ -437,7 +437,7 @@
               {#if message.role !== 'system'}
                 <div class={`flex gap-4 ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div class={`flex w-full max-w-3xl gap-4 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}>
-                    <div class={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl shadow-lg ${message.role === 'user' ? 'bg-gradient-to-br from-slate-800 to-slate-700 text-white shadow-slate-200' : 'bg-gradient-to-br from-violet-600 via-purple-500 to-fuchsia-500 text-white shadow-violet-200'}`}>
+                    <div class={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl shadow-lg ${message.role === 'user' ? 'bg-gradient-to-br from-slate-800 to-slate-700 text-white shadow-slate-200' : 'bg-gradient-to-br from-blue-600 via-blue-500 to-sky-500 text-white shadow-blue-200'}`}>
                       {#if message.role === 'user'}
                         <User class="h-5 w-5" />
                       {:else}
@@ -445,9 +445,9 @@
                       {/if}
                     </div>
 
-                    <div class={`min-w-0 flex-1 rounded-[26px] border px-5 py-4 shadow-sm ${message.role === 'user' ? 'border-slate-200 bg-white text-slate-800' : 'border-violet-100 bg-white/92 text-slate-800 shadow-[0_18px_45px_rgba(109,40,217,0.08)]'}`}>
+                    <div class={`min-w-0 flex-1 rounded-[26px] border px-5 py-4 shadow-sm ${message.role === 'user' ? 'border-slate-200 bg-white text-slate-800' : 'border-blue-100 bg-white/92 text-slate-800 shadow-[0_18px_45px_rgba(37,99,235,0.08)]'}`}>
                       <div class="mb-2 flex items-center justify-between gap-3">
-                        <div class={`text-xs font-bold uppercase tracking-[0.22em] ${message.role === 'user' ? 'text-slate-400' : 'text-violet-500'}`}>
+                        <div class={`text-xs font-bold uppercase tracking-[0.22em] ${message.role === 'user' ? 'text-slate-400' : 'text-blue-500'}`}>
                           {message.role === 'user' ? userName : 'Aprende+'}
                         </div>
                       </div>
@@ -463,15 +463,15 @@
             {#if isLoading && messages[messages.length - 1].role === 'user'}
               <div class="flex justify-start">
                 <div class="flex w-full max-w-3xl gap-4">
-                  <div class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 via-purple-500 to-fuchsia-500 text-white shadow-lg shadow-violet-200">
+                  <div class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-blue-500 to-sky-500 text-white shadow-lg shadow-blue-200">
                     <BrainCircuit class="h-5 w-5" />
                   </div>
-                  <div class="rounded-[26px] border border-violet-100 bg-white/92 px-5 py-4 shadow-[0_18px_45px_rgba(109,40,217,0.08)]">
-                    <div class="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-violet-500">Aprende+</div>
+                  <div class="rounded-[26px] border border-blue-100 bg-white/92 px-5 py-4 shadow-[0_18px_45px_rgba(37,99,235,0.08)]">
+                    <div class="mb-2 text-xs font-bold uppercase tracking-[0.22em] text-blue-500">Aprende+</div>
                     <div class="flex gap-1.5">
-                      <span class="h-2 w-2 rounded-full bg-violet-400 animate-bounce"></span>
-                      <span class="h-2 w-2 rounded-full bg-violet-400 animate-bounce" style="animation-delay: 0.15s"></span>
-                      <span class="h-2 w-2 rounded-full bg-violet-400 animate-bounce" style="animation-delay: 0.3s"></span>
+                      <span class="h-2 w-2 rounded-full bg-blue-400 animate-bounce"></span>
+                      <span class="h-2 w-2 rounded-full bg-blue-400 animate-bounce" style="animation-delay: 0.15s"></span>
+                      <span class="h-2 w-2 rounded-full bg-blue-400 animate-bounce" style="animation-delay: 0.3s"></span>
                     </div>
                   </div>
                 </div>
@@ -501,13 +501,13 @@
               onkeydown={handleKeydown}
               disabled={isLoading}
               rows="1"
-              class="min-h-[56px] flex-1 resize-none rounded-[24px] border border-violet-100 bg-[linear-gradient(180deg,_#ffffff_0%,_#faf7ff_100%)] px-5 py-4 text-[15px] text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-violet-300 focus:shadow-[0_0_0_4px_rgba(139,92,246,0.12)] disabled:cursor-not-allowed disabled:opacity-70"
+              class="min-h-[56px] flex-1 resize-none rounded-[24px] border border-blue-100 bg-[linear-gradient(180deg,_#ffffff_0%,_#f4f9ff_100%)] px-5 py-4 text-[15px] text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-blue-300 focus:shadow-[0_0_0_4px_rgba(59,130,246,0.12)] disabled:cursor-not-allowed disabled:opacity-70"
             ></textarea>
 
             <button
               onclick={sendMessage}
               disabled={isLoading || !inputMessage.trim()}
-              class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-[22px] bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-500 text-white shadow-lg shadow-violet-200 transition-all hover:-translate-y-0.5 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
+              class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-[22px] bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white shadow-lg shadow-blue-200 transition-all hover:-translate-y-0.5 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
               aria-label="Enviar"
             >
               <Send class="h-5 w-5" />
@@ -529,11 +529,14 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #c4b5fd 0%, #a78bfa 100%);
+    background: linear-gradient(180deg, #93c5fd 0%, #60a5fa 100%);
     border-radius: 999px;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #a78bfa 0%, #8b5cf6 100%);
+    background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
   }
 </style>
+
+
+
